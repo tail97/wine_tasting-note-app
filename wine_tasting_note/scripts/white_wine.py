@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-from scraper.models import Wine
+from scraper.models import White_wine
 
 def run():
     for a in range(1,10):
-        url = "http://www.kajawine.kr/shop/list.php?ca_id=10&type_color=2&it_opt4=&it_opt9=&it_price="+str(a)
+        url = "http://www.kajawine.kr/shop/list.php?ca_id=10&sort=&sortodr=&type_color=2&it_price=&it_opt4=&it_opt9=&page="+str(a)
         res = requests.get(url)
         soup = BeautifulSoup(res.text, "html.parser")
         items = soup.select("li.item_thumb")
@@ -86,7 +86,7 @@ def run():
                 print("링크:",link)
                 
                 
-                db_cnt = Wine.objects.filter(link__iexact=link).count()
+                db_cnt = White_wine.objects.filter(link__iexact=link).count()
                 print(db_cnt)
                 
                 if(db_cnt==0):
@@ -94,7 +94,7 @@ def run():
                     try:
                         print("들어왔음1")
                         print(capacity)
-                        Wine(name=name,img_url=img_url,link=link, wine_info=wine_info,category=category,alcohol=alcohol,capacity=capacity,discount=discount,price=price).save()                  
+                        White_wine(name=name,img_url=img_url,link=link, wine_info=wine_info,category=category,alcohol=alcohol,capacity=capacity,discount=discount,price=price).save()                  
                         print("들어왔음2")
                     except Exception as e:
                         
