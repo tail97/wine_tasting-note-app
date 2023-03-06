@@ -46,6 +46,3 @@ class Rose_Wine(models.Model):
     
     def __str__(self):
         return f'{self.name}-{self.alcohol}-{self.category}-{self.price}-{self.discount}-{self.cdate}'
-
-
- 
