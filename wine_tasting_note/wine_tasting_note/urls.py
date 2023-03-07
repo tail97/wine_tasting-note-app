@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from scraper.views import index
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #웹 홈페이지 url연동
     path('', index, name = 'index'),
+    path('', include('scraper.urls')),
 ]
