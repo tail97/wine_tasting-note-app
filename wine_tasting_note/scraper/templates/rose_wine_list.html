@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>White wine list</title>
+  <title>Rose wine list</title>
    
   <!--Bootstrap core CSS-->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -49,22 +49,22 @@
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">White wine</h5>
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Red wine</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'scraper:red' %}">Red wine</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'scraper:white' %}">White wine</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'scraper:rose' %}">rosewine</a>
+                <a class="nav-link" href="{% url 'scraper:red' %}">Red wine</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Tasting note</a>
               </li>
-            
+              
             </ul>
             <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -77,12 +77,12 @@
   </nav>
 
   <div style="display: flex; align-items: center; justify-content: center; height: 150px;">
-    <p style="font-size: 1.5cm;">White wine list</p>
+    <p style="font-size: 1.5cm;">Rose wine list</p>
   </div>
 
 
 
-  {% for i in whitewine %}
+  {% for i in rosewine %}
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-4">
