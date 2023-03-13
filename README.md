@@ -11,3 +11,7 @@
 #기술 스텍
 
 Django , python , git , css , html  
+
+#트러블 슈팅
+
+https://hanbbang.notion.site/fe9fd668c2f5454598ed317cc68a92b8
