@@ -57,3 +57,6 @@ class Tastingnote(models.Model):
     head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d/',blank = True) #이미지
     file_upload = models.FileField(upload_to = 'blog/file/%Y/%m/%d/',blank = True ) #업로드 파일
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL) #작성자
+    
+    def __str__(self):
+        return f'{self.title}'
