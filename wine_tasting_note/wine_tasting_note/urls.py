@@ -21,6 +21,8 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     #웹 홈페이지 url연동
-    path('', index, name = 'index'),
+    path('', index, name = 'home'),
     path('', include('scraper.urls')),
+    path('summernote/', include('django_summernote.urls')),
+    
 ]

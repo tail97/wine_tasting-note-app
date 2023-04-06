@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
-from . views import TastingListView
+from . views import TastingListView,TastingCreate
 
 app_name = 'scraper' 
 urlpatterns = [
@@ -11,4 +11,6 @@ urlpatterns = [
     path('redwine/', views.Red, name= 'red' ),
     path('rosewine/', views.Rose, name= 'rose' ),
     path('tastingnote/', TastingListView.as_view(), name= 'tastingnote' ),
+    path('createtastingnote/', TastingCreate.as_view(), name= 'createtastingnote' ),
+    
 ]

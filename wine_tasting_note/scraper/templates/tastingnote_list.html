@@ -127,9 +127,9 @@
         </tbody>
     </table>
     <div style="float: right">
-        <button type="button" class="btn btn-outline-dark" >작성하기</button>
+        <a href="{% url 'scraper:createtastingnote' %}" class="btn btn-outline-dark" tabindex="-1" role="button" aria-disabled="true">작성하기</a>
     </div>
-
+    {% include 'footer.html' %}
 
 </body>
 

@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView ,CreateView
 from .models import White_wine , Wine ,Rose_Wine,Tastingnote
 from django.core.paginator import Paginator
 import math
+from .forms import TastingForm
 
 # 웹 홈페이지 구현 
 def index(request):
@@ -60,3 +61,8 @@ class TastingListView(ListView):
     model = Tastingnote
     paginate_by = 5
     template_name = 'tastingnote_list.html'
+
+class TastingCreate(CreateView):
+    model = Tastingnote
+    form_class = TastingForm
+    template_name = "tastingnote_create.html"
