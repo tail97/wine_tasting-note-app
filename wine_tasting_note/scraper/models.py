@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.contrib.auth.models import User
+from django_summernote.fields import SummernoteTextField
 # from django.forms import ModelForm
 
 class Wine(models.Model):
@@ -51,9 +52,9 @@ class Rose_Wine(models.Model):
 
 class Tastingnote(models.Model):
     title = models.CharField(max_length=30) #제목
-    content = models.TextField() #내용
+    content = SummernoteTextField() #내용
     created_at = models.DateTimeField(auto_now_add=True) #add 할 때의 시간
     updated_at = models.DateTimeField(auto_now=True) #update 할 때의 시간
-    head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d/',blank = True) #이미지
-    file_upload = models.FileField(upload_to = 'blog/file/%Y/%m/%d/',blank = True ) #업로드 파일
+    head_image = models.ImageField(upload_to='media/',blank = True) #이미지
+    file_upload = models.FileField(upload_to = 'media/',blank = True ) #업로드 파일
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL) #작성자

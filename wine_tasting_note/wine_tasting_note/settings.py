@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,11 +42,11 @@ INSTALLED_APPS = [
     'django_extensions',
     'crispy_forms',
     'django_summernote',
-    
-    
+    'crispy_bootstrap4'
 ]
-
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+#crispy 팩을 사용하려면 필요한 코드
+# CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
@@ -134,4 +135,8 @@ STATICFILES_DIRS = (BASE_DIR / 'static',)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#장고에서 저장한 사진 경로
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 
